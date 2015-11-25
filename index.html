@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="eng" data-ng-app="exampleTodo">
+<head>
+	<title>TODO list</title>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="img/icon.png">
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- Jquery -->
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+	<!-- Material Design Lite -->
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.grey-blue.min.css" />
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<!-- CSS and styles -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/index.css" media="screen,projection">
+
+	<!-- Material Design Modal -->
+    <script src="js/mdl-jquery-modal-dialog.js"></script>
+
+</head>
+<body data-ng-controller="TodoCtrl" data-ng-init="init()">
+	<div>
+		<div class="header">
+			<h1>TODO List in Angular JS + Material Design Lite</h1>
+		</div>
+		<section id="todoapp" class="mainDiv">
+      		<span>
+      			<h2 class="remaining">You've got <span class="emphasis">{{remaining()}}</span> out of {{todos.length}} things to do</h2>
+			</span>
+
+			<ul class="unstlyled">
+				<li data-ng-repeat="todo in todos track by $index" class="todo-elements">
+
+					<label class="item-label mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{todo.taskName}}">
+						<input type="checkbox" id="checkbox-{{todo.taskName}}" class="mdl-checkbox__input" ng-model="todo.isDone">
+						<span class="mdl-checkbox__label done-{{todo.isDone}} taskname">{{todo.taskName}}</span>
+					</label>
+
+					<button type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored delete-btn" aria-hidden="true" data-ng-click="deleteTodo($index)">
+						<i class="material-icons">delete</i>
+					</button>
+				</li>
+			</ul>
+
+			<button id="add-frame" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-frame-btn">
+			  <i class="material-icons">add</i>
+			</button>
+		</section>
+	</div>
+
+	<!-- TODO: implement console>
+			<div class="debug-div">
+				<h3>Debugging Area</h3>
+				<p>In order to know what is happening here, the underlying model is represented below:</p>
+				<div class="debug">
+					<p class="text-info">{{ todos | json}}</p>
+				</div>
+			</div>
+	</-->
+
+	<!-- JavaScript -->	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+
+	<!-- Test: still work on the modal frame -->
+	<script>
+    /*  HERE  */
+    $('#add-frame').click(function () {
+        showDialog({
+            title: 'Add task',
+            negative: {
+                title: 'Nope'
+            },
+            positive: {
+                title: 'Add',
+                onClick: function (e) {
+                    alert('Action performed!');
+                }
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* CSS FILE */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f9f9f9;
+    font-family: 'Roboto', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+    min-height: auto;
+    color: #212121;
+}
+
+.header {
+	background-color: #616161;
+    color: #f5f5f5;
+    min-height: 200px;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: background-color 100ms linear 0s;
+}
+
+.header h1 {
+	font-size: 34px;
+    margin: 0;
+    text-align: center;
+}
+
+.remaining {
+	font-size: 22px;
+}
+
+.mainDiv {
+	width: 600px;
+	margin: 50px auto;
+}
+
+.unstlyled {
+	list-style: none;
+}
+
+.unstlyled li {
+	height: 40px;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+ul li label .taskname {
+	font-size: 26px;
+}
+
+ul li .item-label {
+	width: 90%;
+}
+
+.delete-btn {
+	
+}
+
+
+.add-frame-btn {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	z-index: 999;
+}
+
+.debug-div {
+	float: left;
+}
+
+.debug-div h3 {
+	font-size: 24px;
+}
+
+.debug {
+	background-color: #000;
+	color: #FFF;
+	border: 3px double #CCCCCC;
+	padding: 10px;
+	
+}
+
+/* Modal Frame Style */
+.dialog-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: scroll;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+
+.dialog-container > div {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    min-height: 25px;
+    margin: 10% auto;
+    z-index: 99999;
+    padding: 16px 16px 0;
+}
