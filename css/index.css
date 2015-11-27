@@ -88,28 +88,16 @@ ul li .item-label {
 	
 }
 
-/* Modal Frame Style */
-.dialog-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: scroll;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 9999;
-    opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
+label {
+    font-weight: 500;
+    margin-bottom: 0;
 }
 
-.dialog-container > div {
+.modal-dialog {
+    max-width: 390px;
+    min-height: 25px;
+    padding: 16px 16px 0;
     position: relative;
     width: 90%;
-    max-width: 500px;
-    min-height: 25px;
-    margin: 10% auto;
     z-index: 99999;
-    padding: 16px 16px 0;
 }

@@ -2,7 +2,6 @@ function showDialog(options) {
     options = $.extend({
         id: 'orrsDiag',
         title: null,
-        input: null,
         negative: false,
         positive: false,
         cancelable: true,
@@ -24,23 +23,15 @@ function showDialog(options) {
     if (options.title != null) {
         $('<h5>' + options.title + '</h5>').appendTo(content);
     }
-    /*
-     * OLD!
-    if (options.input != null) {
-        
-    }*/
 
-    /* TODO: Insert a texfield into the frame */
-    /*
-
-    $('<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="sample3">
-                <label class="mdl-textfield__label" for="sample3"> 
-                    What are you about to do?"
-                </label>
-        </div>').appendTo(content);
-
-    */
+    $('<form ng-submit="addItem()">' +
+         '<div class="mdl-textfield mdl-js-textfield">' + 
+            '<input class="mdl-textfield__input" type="text" id="input-frame" ng-model="itemText" required>' +
+                '<label class="mdl-textfield__label" for="input-frame">' + 
+                    'What are you about to do?' +
+               '</label>' +
+         '</div>' +
+        '</form>').appendTo(content);
 
     if (options.negative || options.positive) {
         var buttonBar = $('<div class="mdl-card__actions dialog-button-bar"></div>');
@@ -64,11 +55,13 @@ function showDialog(options) {
             options.positive = $.extend({
                 id: 'positive',
                 title: 'OK',
+                
                 onClick: function () {
                     return false;
                 }
+                
             }, options.positive);
-            var posButton = $('<button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="' + options.positive.id + '">' + options.positive.title + '</button>');
+            var posButton = $('<button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="' + options.positive.id + '">' + options.positive.title + '</button>');
             posButton.click(function (e) {
                 e.preventDefault();
                 if (!options.positive.onClick(e))

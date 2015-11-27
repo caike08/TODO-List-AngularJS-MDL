@@ -5,7 +5,9 @@ var App = angular.module("exampleTodo", []);
 
 App.controller('TodoCtrl', ['$scope', function ($scope) {
 	/* Array of Todos */ 
-	$scope.todos = [];
+	$scope.todos = [
+		{taskName:'learn angular', isDone:true}
+	];
 
 	$scope.init = function() {
 		console.log("HELLO LOCALSTORAGE");
