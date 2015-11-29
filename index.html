@@ -22,7 +22,7 @@
 
 
 	<!-- CSS and styles -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/index.css" media="screen,projection">
 	<link rel="stylesheet" type="text/css" href="css/modal.css">
 
@@ -30,11 +30,22 @@
 <body data-ng-controller="TodoCtrl" data-ng-init="init()">
 	<div>
 		<div class="header">
-			<h1>TODO List in Angular JS + Material Design Lite</h1>
+			<button id="demo-menu-lower-left"
+			        class="mdl-button mdl-js-button mdl-button--icon menu-header">
+			  <i class="material-icons">more_vert</i>
+			</button>
+
+			<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+			    for="demo-menu-lower-left">
+			  <li class="mdl-menu__item" data-ng-click="archive()">Archive</li>
+			</ul>
+
+
+			<h1>TODO List</h1>
 		</div>
 		<section id="todoapp" class="mainDiv">
       		<span>
-      			<h2 class="remaining">You've got <span class="emphasis">{{remaining()}}</span> out of {{todos.length}} things to do</h2>
+      			<h2 class="remaining">You've got <span class="emphasis">{{remaining()}}</span> out of {{todos.length}} things to do:</h2>
 			</span>
 
 			<ul class="unstlyled">
@@ -50,11 +61,13 @@
 					</button>
 				</li>
 			</ul>
-
-			<button id="add-frame" class="modal__trigger mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-frame-btn" data-toggle="modal" data-target="#todo-modal">
-			  <i class="material-icons">add</i>
-			</button>
 		</section>
+
+		<div class="footer">
+			<button id="add-frame" class="modal__trigger mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored add-frame-btn" data-toggle="modal" data-target="#todo-modal">
+		  		<i class="material-icons">add</i>
+			</button>
+		</div>
 	</div>
 
 
@@ -83,6 +96,10 @@
 		  		</form>
 			</div>
 		</div>
+	</div>
+
+	<div class="footer">
+		<p> © Built with Angular JS and Material Design Lite</p>
 	</div>
 	<!--
 			<div class="debug-div">

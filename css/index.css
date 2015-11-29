@@ -28,48 +28,52 @@ body {
 }
 
 .header h1 {
-	font-size: 34px;
-    margin: 0;
-    text-align: center;
+    position: relative;
+    text-align: justify;
+    font-size: 24px;
+    margin: 0 60px;
+    min-height: 65px;
+    top: 72px;
+}
+
+.menu-header {
+    left: 20px;
+    position: relative;
+    top: 105px;
 }
 
 .remaining {
 	font-size: 22px;
+    padding-left: 20px;
 }
 
 .mainDiv {
-	width: 600px;
 	margin: 50px auto;
+    max-width: 600px;
+    min-width: 380px;
+    width: 80%;
 }
 
 .unstlyled {
 	list-style: none;
+     margin: 0 20px;
 }
 
 .unstlyled li {
-	height: 40px;
     margin: 10px 0;
+    min-width: 370px;
     padding: 10px 0;
 }
 
 ul li label .taskname {
 	font-size: 26px;
+    font-weight: 300;
+    line-height: 20px;
+    margin-left: 5px;
 }
 
 ul li .item-label {
 	width: 90%;
-}
-
-.delete-btn {
-	
-}
-
-
-.add-frame-btn {
-	position: absolute;
-	right: 20px;
-	bottom: 20px;
-	z-index: 999;
 }
 
 .debug-div {
@@ -100,4 +104,26 @@ label {
     position: relative;
     width: 90%;
     z-index: 99999;
+    color: #212121;
 }
+
+.footer {
+    bottom: 0;
+    height: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.footer p { 
+    text-align: center;
+    font-size: 12px;
+}
+
+.add-frame-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+}
+
+

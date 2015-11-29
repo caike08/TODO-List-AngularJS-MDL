@@ -46,4 +46,23 @@ App.controller('TodoCtrl', ['$scope', function ($scope) {
 		$scope.todos.splice(index, 1);
 		$scope.saveLocalStorage();
 	}
+
+	$scope.archive = function() {
+		alert("This function will be implemented!");
+
+		/* TODO: Work on archive function */
+		/*
+		var oldTodos = $scope.todos;
+		$scope.todos = [];
+
+		for (var i = 0; i < $scope.todos.length ; i++) {
+			todo = $scope.todos[i];
+				if (!todo.isDone) {
+					$scope.todos.push(todo);
+					console.log("inside loop");
+				}
+		};
+		$scope.saveLocalStorage();
+		*/
+	}
 }]);
