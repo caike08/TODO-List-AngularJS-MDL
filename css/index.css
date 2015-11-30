@@ -73,7 +73,7 @@ ul li label .taskname {
 }
 
 ul li .item-label {
-	width: 90%;
+	 width: 80%;   
 }
 
 .debug-div {
@@ -110,8 +110,9 @@ label {
 .footer {
     bottom: 0;
     height: 50px;
+    margin: 5px auto;
     position: relative;
-    width: 100%;
+    width: 60%;
 }
 
 .footer p { 
@@ -120,10 +121,24 @@ label {
 }
 
 .add-frame-btn {
+    bottom: 20px;
     position: fixed;
     right: 20px;
-    bottom: 20px;
     z-index: 999;
+    transition:All 0.3s ease-in-out;
+    -webkit-transition:All 0.3s ease-in-out;
+    -moz-transition:All 0.3s ease-in-out;
+    -o-transition:All 0.3s ease-in-out;
 }
 
 
+@media all and (max-width: 600px) {
+    .add-frame-btn {
+        bottom: 15px;
+        right: 15px;
+        transition:All 0.3s ease-in-out;
+        -webkit-transition:All 0.3s ease-in-out;
+        -moz-transition:All 0.3s ease-in-out;
+        -o-transition:All 0.3s ease-in-out;
+    }
+}
