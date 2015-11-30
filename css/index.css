@@ -125,12 +125,10 @@ label {
     position: fixed;
     right: 20px;
     z-index: 999;
-    transition:All 0.3s ease-in-out;
-    -webkit-transition:All 0.3s ease-in-out;
-    -moz-transition:All 0.3s ease-in-out;
-    -o-transition:All 0.3s ease-in-out;
 }
 
+
+/*
 
 @media all and (max-width: 600px) {
     .add-frame-btn {
@@ -142,3 +140,5 @@ label {
         -o-transition:All 0.3s ease-in-out;
     }
 }
+
+*/
