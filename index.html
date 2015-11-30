@@ -28,7 +28,7 @@
 	<link rel="stylesheet" type="text/css" href="css/modal.css">
 
 </head>
-<body data-ng-controller="TodoCtrl" data-ng-init="init()">
+<body data-ng-controller="TodoCtrl as todoList" data-ng-init="init()">
 	<div>
 		<div class="header">
 			<button id="demo-menu-lower-left"
@@ -38,7 +38,7 @@
 
 			<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
 			    for="demo-menu-lower-left">
-			  <li class="mdl-menu__item" data-ng-click="archive()">Archive</li>
+			  <li class="mdl-menu__item" data-ng-click="todoList.archive()">Archive</li>
 			</ul>
 
 
@@ -46,18 +46,20 @@
 		</div>
 		<section id="todoapp" class="mainDiv">
       		<span>
-      			<h2 class="remaining">You've got <span class="emphasis">{{remaining()}}</span> out of {{todos.length}} things to do:</h2>
+      			<h2 class="remaining">You've got <span class="emphasis">
+      				{{todoList.remaining()}}</span> out of {{todoList.todos.length}} things to do:
+      			</h2>
 			</span>
 
 			<ul class="unstlyled">
-				<li data-ng-repeat="todo in todos track by $index" class="todo-elements">
+				<li data-ng-repeat="todo in todoList.todos track by $index" class="todo-elements">
 
 					<label class="item-label mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{todo.taskName}}">
 						<input type="checkbox" id="checkbox-{{todo.taskName}}" class="mdl-checkbox__input" ng-model="todo.isDone">
 						<span class="mdl-checkbox__label done-{{todo.isDone}} taskname">{{todo.taskName}}</span>
 					</label>
 
-					<button type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored delete-btn" aria-hidden="true" data-ng-click="deleteTodo($index)">
+					<button type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored delete-btn" aria-hidden="true" data-ng-click="todoList.deleteTodo($index)">
 						<i class="material-icons">delete</i>
 					</button>
 				</li>
@@ -76,14 +78,14 @@
 		<div class="modal-dialog">
 			<!-- Modal content-->
 			<div class="modal-content">
-				<form ng-submit="addItem()">
+				<form ng-submit="todoList.addItem()">
 			  		<div class="modal-header">
 			    		<button type="button" class="close" data-dismiss="modal">&times;</button>
 			    		<h4 class="modal-title" id="myModalLabel-2">Add TODO</h4>
 			  		</div>
 			  		<div class="modal-body">
 	         			<div class="mdl-textfield mdl-js-textfield"> 
-	            			<input class="mdl-textfield__input" type="text" id="input-frame" ng-model="itemText" required>
+	            			<input class="mdl-textfield__input" type="text" id="input-frame" ng-model="todoList.itemText" required>
 	                			<label class="mdl-textfield__label" for="input-frame">
 	                				What are you about to do?
 	                			</label>
@@ -91,8 +93,8 @@
 			  		</div>
 			  		<div class="modal-footer">
 			    		<button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Close</button>
-			    		
-			    		<input class="mdl-button mdl-js-button mdl-js-ripple-effect" type="submit" value="Add">
+
+			    		<button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect" id="add-btn">Add</button>
 			  		</div>
 		  		</form>
 			</div>
@@ -115,6 +117,7 @@
 	<!-- JavaScript -->	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="js/controller.js"></script>
+	<script type="text/javascript" src="js/modal.js"></script>
 
 </body>
 </html>

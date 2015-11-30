@@ -70,6 +70,7 @@ ul li label .taskname {
     font-weight: 300;
     line-height: 20px;
     margin-left: 5px;
+    text-transform: capitalize;
 }
 
 ul li .item-label {
